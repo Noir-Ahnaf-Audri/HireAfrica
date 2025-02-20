@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HireAfrica.Pages.SignIn"
+             Title="Sign In">
+    <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
+        <VerticalStackLayout Padding="30" Spacing="20">
+            <Image Source="https://i.ibb.co/fd0rXjjg/hireafricalogo-removebg-preview.png"
+                   Aspect="AspectFit"
+                   HeightRequest="150"
+                   HorizontalOptions="Center"/>
+
+            <Label Text="Sign In" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalTextAlignment="Center"/>
+
+            <Entry x:Name="EmailEntry" Placeholder="Email" Keyboard="Email"/>
+            <Label x:Name="EmailError" Text="Email is required" IsVisible="False" TextColor="Red"/>
+
+            <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True"/>
+            <Label x:Name="PasswordError" Text="Password is required" IsVisible="False" TextColor="Red"/>
+
+            <Button Text="Sign In" 
+                    BackgroundColor="Green" 
+                    TextColor="White" 
+                    Clicked="SignInButton_Clicked"/>
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="Don't have an account?" />
+                <Button Text="Sign Up" Clicked="SignUpButton_Clicked" BackgroundColor="Transparent" TextColor="Blue"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

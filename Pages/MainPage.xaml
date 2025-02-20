@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HireAfrica.Pages.MainPage">
+
+    <ScrollView>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+
+
+            <VerticalStackLayout Grid.Row="0" Padding="30,0" Spacing="25" BackgroundColor="LightSkyBlue">
+                <Image Source="https://i.ibb.co/fd0rXjjg/hireafricalogo-removebg-preview.png"
+                       Aspect="AspectFill"
+                       Margin="20"/>
+                <Label
+                    Text="Find Your Perfect Opportunity"
+                    FontSize="38"
+                    Margin="0,-100,0,0"
+                    HorizontalTextAlignment="Center" 
+                    VerticalTextAlignment="Center"
+                    TextColor="FloralWhite"
+                    FontAttributes="Bold"/>
+
+                <Label
+                    Text="Connecting ambitious freelancer with meaningful internships, part-time jobs, and freelance work accross Africa."
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    TextColor="FloralWhite" />
+
+
+                <Button
+                    x:Name="studentbtn"
+                    Text="I'm a freelancer" 
+                    CornerRadius="20"
+                    BackgroundColor="White"
+                    TextColor="Blue"
+                    HorizontalOptions="Fill"/>
+                <Button
+                    x:Name="employerbtn"
+                    Text="I'm a Client" 
+                    CornerRadius="20"
+                    TextColor="White"
+                    HorizontalOptions="Fill" Margin="0,0,0,30"/>
+            </VerticalStackLayout>
+
+
+            <VerticalStackLayout Grid.Row="2" Padding="30,0" Spacing="25" BackgroundColor="LightGray">
+                <Label
+                    Text="Why Choose Us"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center" Margin="15"/>
+                <Image Source="https://i.ibb.co/m5zGp33c/image-from-rawpixel-id-16758155-png.png"
+                       Aspect="AspectFill"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       HeightRequest="30"/>
+                <Label
+                    Text="For Freelancers"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    FontAttributes="Bold"
+                    FontSize="15"/>
+                <Label
+                    Text="Access to exclusive projects. Expand your professional network. Showcase your skills and build your portfolio. Enjoy Flexible work arrangements"
+                    FontSize="13"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center" Margin="0,0,0,20"/>
+                <Image Source="https://i.ibb.co/3ycW2W3g/image-from-rawpixel-id-16758809-png.png"
+                    Aspect="AspectFill"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    HeightRequest="50"/>
+                <Label
+                     Text="For Client"
+                     HorizontalTextAlignment="Center"
+                     VerticalTextAlignment="Center"
+                     FontAttributes="Bold"
+                     FontSize="15"/>
+                <Label
+                     Text="Find skilled freelancers for your projects. Streamlined hiring process.Cost-effective solutions. Build a reliable talent pool for your needs."
+                     FontSize="13"
+                     HorizontalTextAlignment="Center"
+                     VerticalTextAlignment="Center" Margin="0,0,0,20"/>
+            </VerticalStackLayout>
+
+
+            <VerticalStackLayout Grid.Row="2" Padding="30,0" Spacing="25" BackgroundColor="LightGray">
+                <Label
+         Text="Why Choose Us"
+         FontSize="20"
+         FontAttributes="Bold"
+         HorizontalTextAlignment="Center"
+         VerticalTextAlignment="Center" Margin="15"/>
+                <Image Source="https://i.ibb.co/m5zGp33c/image-from-rawpixel-id-16758155-png.png"
+            Aspect="AspectFill"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            HeightRequest="30"/>
+                <Label
+         Text="For Freelancers"
+         HorizontalTextAlignment="Center"
+         VerticalTextAlignment="Center"
+         FontAttributes="Bold"
+         FontSize="15"/>
+                <Label
+         Text="Access to exclusive projects. Expand your professional network. Showcase your skills and build your portfolio. Enjoy flexible work arrangements."
+         FontSize="13"
+         HorizontalTextAlignment="Center"
+         VerticalTextAlignment="Center" Margin="0,0,0,20"/>
+                <Image Source="https://i.ibb.co/3ycW2W3g/image-from-rawpixel-id-16758809-png.png"
+         Aspect="AspectFill"
+         HorizontalOptions="Center"
+         VerticalOptions="Center"
+         HeightRequest="50"/>
+                <Label
+          Text="For Clients"
+          HorizontalTextAlignment="Center"
+          VerticalTextAlignment="Center"
+          FontAttributes="Bold"
+          FontSize="15"/>
+                <Label
+          Text="Find skilled freelancers for your projects. Streamlined hiring process. Cost-effective solutions. Build a reliable talent pool for your needs."
+          FontSize="13"
+          HorizontalTextAlignment="Center"
+          VerticalTextAlignment="Center" Margin="0,0,0,20"/>
+            </VerticalStackLayout>
+
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
