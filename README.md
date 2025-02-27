@@ -1,2 +1,0 @@
-# HireAfrica
-Mobile Application
