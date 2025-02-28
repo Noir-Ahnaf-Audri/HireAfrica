@@ -52,3 +52,44 @@
   background-size: 25px 25px;
   pointer-events: none;
 }
+
+.animate-gradient {
+  background-size: 300%;
+  -webkit-animation: animatedgradient 9s ease infinite alternate;
+  -moz-animation: animatedgradient 9s ease infinite alternate;
+  animation: animatedgradient 9s ease infinite alternate;
+}
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes glowingBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.glowing-border {
+  border: 2px solid transparent;
+  background-image: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #00ffff);
+  background-size: 400% 400%;
+  animation: glowingBorder 7s ease infinite;
+}
+
+.glowing-border:hover {
+  animation: glowingBorder 1.5s ease infinite;
+}

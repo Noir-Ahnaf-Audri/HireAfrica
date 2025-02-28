@@ -11,16 +11,17 @@ import {
 const Header = () => {
   return (
     <>
-      <nav className=" px-4 py-4 flex justify-between items-center">
+      <nav className="px-4 py-4 flex justify-between items-center">
         <Link>
-          <img src="./comp-logo.png" className="h-10" />
+          <img src="./compLogo.png" className="h-10" />
         </Link>
-        <SignedOut>
+        <Button>Sign In</Button>
+        {/*<SignedOut>
           <SignInButton />
         </SignedOut>
         <SignedIn>
           <UserButton />
-        </SignedIn>
+        </SignedIn>*/}
       </nav>
     </>
   );

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "rwa",
+    "path": "/logos/vuma_prev_ui.png",
+    "id": 1
+  },
+  {
+    "name": "apc",
+    "path": "/logos/apc.svg",
+    "id": 2
+  },
+  {
+    "name": "ackermans",
+    "path": "/logos/acker.svg",
+    "id": 3
+  },
+  {
+    "name": "momentum",
+    "path": "/logos/momen.svg",
+    "id": 4
+  },
+  {
+    "name": "mondi",
+    "path": "/logos/Mondi_Logo.svg",
+    "id": 5
+  }
+]
