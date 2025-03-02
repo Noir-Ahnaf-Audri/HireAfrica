@@ -85,7 +85,7 @@
 
 .glowing-border {
   border: 2px solid transparent;
-  background-image: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #00ffff);
+  background-image: linear-gradient(45deg, #800080, #008080, #800080, #008080);
   background-size: 400% 400%;
   animation: glowingBorder 7s ease infinite;
 }

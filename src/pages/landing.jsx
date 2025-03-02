@@ -1,32 +1,18 @@
+/* eslint-disable react/prop-types */
 import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import compDatas from "../randomInfos/compDatas.json";
+import faq from "../randomInfos/faq.json";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-
-interface Hero3Props {
-  heading?: string;
-  description?: string;
-  buttons?: {
-    primary?: {
-      text: string,
-      url: string,
-    },
-    secondary?: {
-      text: string,
-      url: string,
-    },
-  };
-  reviews?: {
-    count: number,
-    avatars: {
-      src: string,
-      alt: string,
-    }[],
-  };
-}
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Hero3 = ({
   heading = "Blocks built with Shadcn & Tailwind",
@@ -66,11 +52,12 @@ const Hero3 = ({
       },
     ],
   },
-}: Hero3Props) => {
+}) => {
   return (
-    <section>
+    <section className="h-screen flex items-center justify-center">
       <div className="container grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
-        <div className="mx-auto flex flex-col items-center text-center md:ml-auto lg:max-w-3xl lg:items-start lg:text-left">
+        {/* Text Section */}
+        <div className="mx-auto flex flex-col items-center text-center md:ml-auto lg:max-w-3xl lg:items-start lg:text-left order-last lg:order-first">
           <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl xl:text-7xl">
             {heading}
           </h1>
@@ -106,17 +93,23 @@ const Hero3 = ({
               </Button>
             )}
             {buttons.secondary && (
-              <Button asChild variant="outline" className="w-full sm:w-auto">
+              <Button
+                asChild
+                variant=""
+                className="w-full sm:w-auto glowing-border text-white"
+              >
                 <a href={buttons.secondary.url}>{buttons.secondary.text}</a>
               </Button>
             )}
           </div>
         </div>
-        <div className="flex">
+
+        {/* Image Section */}
+        <div className="flex order-first lg:order-last">
           <img
-            src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
+            src="/hiring1.png"
             alt="placeholder hero"
-            className="max-h-[600px] w-full rounded-md object-cover lg:max-h-[800px]"
+            className="transform scale-70 max-h-[400px] w-full rounded-md object-cover sm:max-h-[500px] lg:max-h-[800px]"
           />
         </div>
       </div>
@@ -126,7 +119,7 @@ const Hero3 = ({
 
 const LandingPage = () => {
   return (
-    <main className="px-4 flex flex-col gap-10 sm:gap-20 py-10 sm:py-20">
+    <main className="px-4 flex flex-col gap-10 sm:gap-20 py-20 sm:py-0">
       <Hero3
         heading="Find your Dream Job!"
         description="Explore job opportunities in Africa or find vetted candidates for your openings."
@@ -145,13 +138,13 @@ const LandingPage = () => {
       {/* Marquee for Infinite Scroll of Logos */}
       <section className="py-10">
         <Marquee
-          speed={50} // Adjust speed for smoother scrolling
-          gradient={false} // Disable the gradient effect for smoother transition
-          loop={0} // Infinite loop
-          autoFill={true} // Automatically fill the space when necessary
-          pauseOnHover={true} // Pause on hover for user interaction
-          play={true} // Ensure the marquee is playing by default
-          direction="left" // Scroll direction from left to right
+          speed={50}
+          gradient={false}
+          loop={0}
+          autoFill={true}
+          pauseOnHover={true}
+          play={true}
+          direction="left"
         >
           <div className="flex">
             {compDatas.map(({ name, id, path }) => (
@@ -166,30 +159,44 @@ const LandingPage = () => {
           </div>
         </Marquee>
       </section>
+      <section className="container px-4 mx-auto">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Cards */}
+          <Card className="bg-zinc-900/80">
+            <CardHeader>
+              <CardTitle className="font-bold">For Job Seekers</CardTitle>
+            </CardHeader>
+            <CardContent>
+              Discover new job opportunities, submit your applications, and stay
+              on top of your progress.
+            </CardContent>
+          </Card>
+          <Card className="bg-zinc-900/80">
+            <CardHeader>
+              <CardTitle className="font-bold">For Employers</CardTitle>
+            </CardHeader>
+            <CardContent>
+              Advertise open positions, review candidate applications, and hire
+              the best talent for your company.
+            </CardContent>
+          </Card>
+        </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* Cards */}
-        <Card className="bg-zinc-900/80">
-          <CardHeader>
-            <CardTitle className="font-bold">For Job Seekers</CardTitle>
-          </CardHeader>
-          <CardContent>
-            Discover new job opportunities, submit your applications, and stay
-            on top of your progress.
-          </CardContent>
-        </Card>
-        <Card className="bg-zinc-900/80">
-          <CardHeader>
-            <CardTitle className="font-bold">For Employers</CardTitle>
-          </CardHeader>
-          <CardContent>
-            Advertise open positions, review candidate applications, and hire
-            the best talent for your company.
-          </CardContent>
-        </Card>
+        {/* Accordion */}
+        <h2 className="py-4 my-6 text-pretty text-4xl font-bold lg:text-6xl xl:text-7xl">
+          FAQ
+        </h2>
+        <Accordion type="multiple" className="px-4 w-full bg-zinc-900/80">
+          {" "}
+          {/* Adding a background to the Accordion */}
+          {faq.map((faq, index) => (
+            <AccordionItem key={index} value={`item-${index + 1}`}>
+              <AccordionTrigger>{faq.question}</AccordionTrigger>
+              <AccordionContent>{faq.answer}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </section>
-
-      {/* Accordion */}
     </main>
   );
 };
