@@ -109,7 +109,7 @@ const Hero3 = ({
           <img
             src="/hiring1.png"
             alt="placeholder hero"
-            className="transform scale-70 max-h-[400px] w-full rounded-md object-cover sm:max-h-[500px] lg:max-h-[800px]"
+            className="transform scale-70 max-h-[400px] w-full rounded-md object-cover sm:max-h-[500px] lg:max-h-[800px] z-[-1]"
           />
         </div>
       </div>
