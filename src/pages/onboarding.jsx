@@ -13,13 +13,15 @@ const Onboarding = () => {
   };
 
   const handleRoleSelection = async (role) => {
-    try {
-      await user.update({ unsafeMetadata: { role } });
-      console.log(`Role updated to: ${role}`);
-      navigateUser(role);
-    } catch (err) {
-      console.error("Error updating role:", err);
-    }
+    await user
+      .update({ unsafeMetadata: { role } })
+      .then(() => {
+        console.log(`Role updated to: ${role}`);
+        navigateUser(role);
+      })
+      .catch((err) => {
+        console.error("Error updating role:", err);
+      });
   };
 
   useEffect(() => {
@@ -29,18 +31,14 @@ const Onboarding = () => {
   }, [user]);
 
   if (!isLoaded) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <BarLoader width={200} color="#36d7b7" />
-      </div>
-    );
+    return <BarLoader className="mb-4" width={"100%"} color="#36d7b7" />;
   }
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
       <div className="max-w-2xl w-full bg-white bg-opacity-5 backdrop-blur-md shadow-2xl rounded-2xl p-10 text-center transform transition-all hover:scale-105 duration-300">
         <h2 className="text-5xl md:text-6xl font-bold text-white mb-12">
-          I am a...
+          Sign Up as
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Button

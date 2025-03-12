@@ -7,7 +7,6 @@ import {
   SignIn,
   useUser,
 } from "@clerk/clerk-react";
-import { ClerkProvider } from "@clerk/clerk-react";
 import { Button } from "./ui/button";
 import { BriefcaseBusiness, Heart, PenBox } from "lucide-react";
 
@@ -32,14 +31,16 @@ const Header = () => {
 
   return (
     <>
-      <nav className="px-4 py-4 flex justify-between items-center">
+      <nav className="py-4 flex justify-between items-center">
         <Link to="/">
-          <img src="/compLogo.png" className="h-10" alt="Hire-africa" />
+          <img src="/hireAfrica.png" className="h-16" alt="Hire Africa Logo" />
         </Link>
 
         <div className="flex gap-8">
           <SignedOut>
-            <Button onClick={() => setShowSignIn(true)}>Login</Button>
+            <Button variant="outline" onClick={() => setShowSignIn(true)}>
+              Login
+            </Button>
           </SignedOut>
           <SignedIn>
             {user?.unsafeMetadata?.role === "recruiter" && (
