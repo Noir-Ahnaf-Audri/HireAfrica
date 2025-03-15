@@ -22,25 +22,27 @@ const JobCard = ({
   isMyJob = false,
 }) => {
   const [saved, setSaved] = useState(savedInit);
-
   const { user } = useUser();
-
   const { loading: loadingDeleteJob, fn: fnDeleteJob } = useFetch(deleteJob, {
     job_id: job.id,
   });
-
-  const {
-    loading: loadingSavedJob,
-    data: savedJob,
-    fn: fnSavedJob,
-  } = useFetch(saveJob);
+  const { loading: loadingSavedJob, data: savedJob, fn: fnSavedJob } = useFetch(
+    saveJob
+  );
 
   const handleSaveJob = async () => {
-    await fnSavedJob({
-      user_id: user.id,
-      job_id: job.id,
-    });
-    onJobAction();
+    // Only save if not already saved
+    if (!saved) {
+      await fnSavedJob({
+        user_id: user.id,
+        job_id: job.id,
+      });
+      onJobAction();
+    } else {
+      // You might want to implement an "unsave" function here
+      // For now, we'll just call onJobAction to refresh the UI
+      onJobAction();
+    }
   };
 
   const handleDeleteJob = async () => {
